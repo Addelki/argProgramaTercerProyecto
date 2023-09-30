@@ -1,6 +1,6 @@
 # API con NODE.JS, SEQUELIZE y MYSQL
 Tercer proyecto integrador de argentina programa.
-API para realizar consultas a bases de datos en mysql utlizando node.js, sequelize como orm.
+API para realizar consultas a bases de datos en mysql utlizando node.js y sequelize como orm.
 
 ## Modelo de la base de datos
 Base de datos planteada para el ejercicio:
@@ -124,4 +124,60 @@ Endpoints disponibles en la API. Direccion utilizada: `http://localhost:3030`
     }, ...]
     ```
 
+### Mostrar los contenidos indicando su categoría
+- **URL** : `/catalogo/categoria/:category`
+- **Método** : `GET`
+- **Respuesta exitosa**:
+  - **Status Code** : 200
+  - **Ejemplo de retorno**:
+    Indicando la ruta: `http://localhost:3030/catalogo/categoria/pelicula`
 
+    ```
+    [
+    {
+        "id": 6,
+        "poster": "/posters/6.jpg",
+        "titulo": "Enola Holmes",
+        "categoria": "Película",
+        "genero": "Drama,Ficción,Misterio",
+        "resumen": "La hermana menor de Sherlock, descubre que su madre ha desaparecido y se dispone a encontrarla. En su búsqueda, saca a relucir el sabueso que corre por sus venas y se encuentra con una conspiración que gira en torno a un misterioso lord, demostrando que su ilustre hermano no es el único talento en la familia.",
+        "temporadas": "N/A",
+        "reparto": "Adeel Akhtar,Helena Bonham Carter,Henry Cavill,Louis Partridge,Millie Bobby Brown,Sam Claflin",
+        "trailer": ""
+    },
+    {
+        "id": 7,
+        "poster": "/posters/7.jpg",
+        "titulo": "Guasón",
+        "categoria": "Película",
+        "genero": "Crimen,Drama,Suspenso",
+        "resumen": "Arthur Fleck (Phoenix) es un hombre ignorado por la sociedad, cuya motivación en la vida es hacer reír. Pero una serie de trágicos acontecimientos le llevarán a ver el mundo de otra forma. Película basada en el popular personaje de DC Comics Joker, conocido como archivillano de Batman, pero que en este film tomará un cariz más realista y oscuro.",
+        "temporadas": "N/A",
+        "reparto": "Brett Cullen,Frances Conroy,Joaquin Phoenix,Robert De Niro,Shea Whigham,Zazie Beetz",
+        "trailer": "https://www.youtube.com/embed/zAGVQLHvwOY"
+    }, ...]
+    ```
+
+### Mostrar los contenidos indicando un actor/actriz
+- **URL** : `/catalogo/actor/:actor`
+- **Método** : `GET`
+- **Respuesta exitosa**:
+  - **Status Code** : 200
+  - **Ejemplo de retorno**:
+    Indicando la ruta: `http://localhost:3030/catalogo/actor/Mark Ruffalo`
+
+    ```
+    [
+    {
+        "id": 8,
+        "poster": "/posters/8.jpg",
+        "titulo": "Avengers: End Game",
+        "categoria": "Película",
+        "genero": "Acción,Aventura,Sci-Fi",
+        "resumen": "Después de los devastadores eventos de los Vengadores: Infinity War (2018), el universo está en ruinas. Con la ayuda de los aliados restantes, los Vengadores se reúnen una vez más para revertir las acciones de Thanos y restaurar el equilibrio del universo.",
+        "temporadas": "N/A",
+        "reparto": "Chris Evans,Chris Hemsworth,Jeremy Renner,Mark Ruffalo,Robert Downey Jr.,Scarlett Johansson",
+        "trailer": ""
+    }
+    ]
+    ```
